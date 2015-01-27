@@ -1,95 +1,95 @@
-# n
+# ny (fork of n with iojs support)
 
-Simple flavour of node binary management, no subshells, no profile setup, no convoluted api, just _simple_.
+Simple flavour of iojs binary management, no subshells, no profile setup, no convoluted api, just _simple_.
 
  ![](https://i.cloudup.com/59cA8VEDae.gif)
 
 ## Installation
 
-    $ npm install -g n
+    $ npm install -g ny
 
 or
 
     $ make install
     
-to `$HOME`. Prefix later calls to `n` with `N_PREFIX=$HOME`
+to `$HOME`. Prefix later calls to `ny` with `NY_PREFIX=$HOME`
 
-    $ PREFIX=$HOME make install
+    $ NY_PREFIX=$HOME make install
 
 ### Installing Binaries
 
 Install a few nodes:
 
-    $ n 0.8.14
-    $ n 0.8.17
-    $ n 0.9.6
+    $ ny 1.0.4
+    $ ny 1.0.2
+    $ ny 1.0.1
 
-Type `n` to prompt selection of an installed node. Use the up /
+Type `ny` to prompt selection of an installed iojs. Use the up /
 down arrow to navigate, and press enter or the right arrow to
 select, or ^C to cancel:
 
-    $ n
+    $ ny
 
-      0.8.14
-    ο 0.8.17
-      0.9.6
+      1.0.1
+    ο 1.0.3
+      1.0.4
 
 Use or install the latest official release:
 
-    $ n latest
+    $ ny latest
 
 Use or install the stable official release:
 
-    $ n stable
+    $ ny stable
 
 Switch to the previous version you were using:
 
-    $ n prev
+    $ ny prev
 
 ### Removing Binaries
 
 Remove some versions:
 
-    $ n rm 0.9.4 v0.10.0
+    $ ny rm 1.0.4 v1.0.1
 
 Instead of using `rm` we can simply use `-`:
 
-    $ n - 0.9.4
+    $ ny - 1.0.4
 
 ### Binary Usage
 
-When running multiple versions of node, we can target
-them directly by asking `n` for the binary path:
+When running multiple versions of iojs, we can target
+them directly by asking `ny` for the binary path:
 
-    $ n bin 0.9.4
-    /usr/local/n/versions/0.9.4/bin/node
+    $ ny bin 1.0.4
+    /usr/local/n/versions/1.0.4/bin/node
 
-Or by using a specific version through `n`'s `use` sub-command:
+Or by using a specific version through `ny`'s `use` sub-command:
 
-    $ n use 0.9.4 some.js
+    $ ny use 1.0.4 some.js
 
 with flags:
 
-    $ n as 0.9.4 --debug some.js
+    $ ny as 1.0.4 --debug some.js
 
 ## Usage
 
- Output from `n --help`:
+ Output from `ny --help`:
 
-    Usage: n [options] [COMMAND] [args]
+    Usage: ny [options] [COMMAND] [args]
 
     Commands:
 
-      n                            Output versions installed
-      n latest                     Install or activate the latest node release
-      n stable                     Install or activate the latest stable node release
-      n <version>                  Install node <version>
-      n use <version> [args ...]   Execute node <version> with [args ...]
-      n bin <version>              Output bin path for <version>
-      n rm <version ...>           Remove the given version(s)
-      n --latest                   Output the latest node version available
-      n --stable                   Output the latest stable node version available
-      n ls                         Output the versions of node available
+      ny                            Output versions installed
+      ny latest                     Install or activate the latest iojs release
+      ny stable                     Install or activate the latest stable iojs release
+      ny <version>                  Install iojs <version>
+      ny use <version> [args ...]   Execute iojs <version> with [args ...]
+      ny bin <version>              Output bin path for <version>
+      ny rm <version ...>           Remove the given version(s)
+      ny --latest                   Output the latest iojs version available
+      ny --stable                   Output the latest stable iojs version available
+      ny ls                         Output the versions of iojs available
 
     Options:
 
@@ -105,17 +105,18 @@ with flags:
 
 ## Details
 
- `n` by default installs node to _/usr/local/n/versions_, from
- which it can see what you have currently installed, and activate previously installed versions of node when `n <version>` is invoked again.
+ `ny` by default installs node to _/usr/local/ny/versions_, from
+ which it can see what you have currently installed, and activate previously installed versions of node when `ny <version>` is invoked again.
 
- Activated nodes are then installed to the prefix _/usr/local_, which of course may be altered via the __N_PREFIX__ environment variable.
+ Activated nodes are then installed to the prefix _/usr/local_, which of course may be altered via the __NY_PREFIX__ environment variable.
 
- To alter where `n` operates simply export __N_PREFIX__ to whatever you prefer.
+ To alter where `ny` operates simply export __NY_PREFIX__ to whatever you prefer.
 
 ## License
 
 (The MIT License)
 
+Copyright (c) 2015 Kenan Sulayman &lt;kenan@sly.mn&gt;
 Copyright (c) 2014 TJ Holowaychuk &lt;tj@vision-media.ca&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining

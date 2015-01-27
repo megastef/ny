@@ -5,11 +5,11 @@
 #
 
 VERSION="1.2.13"
-N_PREFIX=${N_PREFIX-/usr/local}
-VERSIONS_DIR=$N_PREFIX/n/versions
+NY_PREFIX=${NY_PREFIX-/usr/local}
+VERSIONS_DIR=$NY_PREFIX/ny/versions
 UP=$'\033[A'
 DOWN=$'\033[B'
-N_MIRROR=${N_MIRROR-http://nodejs.org/dist/}
+N_MIRROR=${N_MIRROR-https://iojs.org/dist/}
 
 test -d $VERSIONS_DIR || mkdir -p $VERSIONS_DIR
 
@@ -73,21 +73,21 @@ handle_sigtstp() {
 display_help() {
   cat <<-EOF
 
-  Usage: n [options] [COMMAND] [args]
+  Usage: ny [options] [COMMAND] [args]
 
   Commands:
 
-    n                            Output versions installed
-    n latest                     Install or activate the latest node release
-    n stable                     Install or activate the latest stable node release
-    n <version>                  Install node <version>
-    n use <version> [args ...]   Execute node <version> with [args ...]
-    n bin <version>              Output bin path for <version>
-    n rm <version ...>           Remove the given version(s)
-    n prev                       Revert to the previously activated version
-    n --latest                   Output the latest node version available
-    n --stable                   Output the latest stable node version available
-    n ls                         Output the versions of node available
+    ny                            Output versions installed
+    ny latest                     Install or activate the latest iojs release
+    ny stable                     Install or activate the latest stable iojs release
+    ny <version>                  Install iojs <version>
+    ny use <version> [args ...]   Execute iojs <version> with [args ...]
+    ny bin <version>              Output bin path for <version>
+    ny rm <version ...>           Remove the given version(s)
+    ny prev                       Revert to the previously activated version
+    ny --latest                   Output the latest iojs version available
+    ny --stable                   Output the latest stable iojs version available
+    ny ls                         Output the versions of iojs available
 
   Options:
 
@@ -266,7 +266,7 @@ tarball_url() {
     *armv6l*) arch=arm-pi ;;
   esac
 
-  echo "${N_MIRROR}v${version}/node-v${version}-${os}-${arch}.tar.gz"
+  echo "${N_MIRROR}v${version}/iojs-v${version}-${os}-${arch}.tar.gz"
 }
 
 #
@@ -279,7 +279,7 @@ activate() {
   if test "$version" != "$active"; then
     local dir=$VERSIONS_DIR/$version
     echo $active > $VERSIONS_DIR/.prev
-    cp -fR $dir/bin $dir/lib $dir/include $dir/share $N_PREFIX
+    cp -fR $dir/bin $dir/lib $dir/include $dir/share $NY_PREFIX
   fi
 }
 
@@ -313,6 +313,8 @@ install_node() {
       | sort -u -k 1,1n -k 2,2n -k 3,3n -t . \
       | egrep ^$version \
       | tail -n1`
+
+    echo $version
 
     test $version || abort "invalid version ${1#v}"
   fi
