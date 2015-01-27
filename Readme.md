@@ -11,7 +11,7 @@ Simple flavour of iojs binary management, no subshells, no profile setup, no con
 or
 
     $ make install
-    
+
 to `$HOME`. Prefix later calls to `ny` with `NY_PREFIX=$HOME`
 
     $ NY_PREFIX=$HOME make install
@@ -90,6 +90,7 @@ with flags:
       ny --latest                   Output the latest iojs version available
       ny --stable                   Output the latest stable iojs version available
       ny ls                         Output the versions of iojs available
+      ny c                          Output the current version of iojs installed
 
     Options:
 
