@@ -4,7 +4,7 @@
 # Setup.
 #
 
-VERSION="1.3.6"
+VERSION="1.3.7"
 NY_PREFIX=${NY_PREFIX-/usr/local}
 VERSIONS_DIR=$NY_PREFIX/ny/versions
 UP=$'\033[A'
