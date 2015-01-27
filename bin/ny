@@ -88,6 +88,7 @@ display_help() {
     ny --latest                   Output the latest iojs version available
     ny --stable                   Output the latest stable iojs version available
     ny ls                         Output the versions of iojs available
+    ny c                          Output the current version of iojs installed
 
   Options:
 
@@ -194,6 +195,17 @@ list_versions_installed() {
     local version=${dir##*/}
     echo $version
   done
+}
+
+#
+# Display current node --version.
+#
+
+display_current_version() {
+  check_current_version
+  if test -n "$active"; then
+    echo $active
+  fi
 }
 
 #
@@ -471,6 +483,7 @@ else
       stable) install_node `n --stable`; exit ;;
       ls|list) display_remote_versions; exit ;;
       prev) activate_previous; exit ;;
+      c) display_current_version; exit ;;
       *) install_node $1; exit ;;
     esac
     shift
