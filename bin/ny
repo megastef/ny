@@ -203,7 +203,7 @@ list_versions_installed() {
 
 display_current_version() {
   check_current_version
-  if test -n "$active"; then
+  if test "$(ls -l $VERSIONS_DIR | grep ^d)" && test -n "$active" ; then
     echo $active
   fi
 }
