@@ -1,3 +1,13 @@
+1.4.0 / 2015-02-05
+==================
+
+ * add: backported node support
+
+1.3.6 / 2015-01-28
+==================
+
+ * add: iojs support
+ * add: show current version (thanks @ryanseys)
 
 1.2.0 / 2014-01-30
 ==================
