@@ -1,6 +1,6 @@
 # ny (fork of n with iojs support)
 
-Simple flavour of iojs binary management, no subshells, no profile setup, no convoluted api, just _simple_.
+Node and io.js version manager written in bash with no subshells, no profile setup, no convoluted api, just simple.
 
  ![](https://i.cloudup.com/59cA8VEDae.gif)
 
