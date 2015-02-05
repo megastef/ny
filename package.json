@@ -1,7 +1,7 @@
 {
   "name": "ny",
   "description": "iojs version manager",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "author": "Kenan Sulayman <kenan@sly.mn>",
   "homepage": "https://github.com/kenansulayman/n",
   "bugs": "https://github.com/kenansulayman/n/issues",
@@ -28,7 +28,8 @@
     "ny"
   ],
   "bin": {
-    "ny": "./bin/ny"
+    "ny": "./bin/ny",
+    "n": "./bin/ny"
   },
   "repository": {
     "type": "git",
