@@ -2,7 +2,7 @@
 
 Node and io.js version manager written in bash with no subshells, no profile setup, no convoluted api, just simple.
 
- ![](https://i.cloudup.com/59cA8VEDae.gif)
+ ![](http://f.cl.ly/items/0T28392C3W3R3W410W3q/buffer.gif)
 
 ## Installation
 
