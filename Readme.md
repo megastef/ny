@@ -1,4 +1,4 @@
-# ny (fork of n with iojs support)
+# ny (iojs version manager)
 
 Node and io.js version manager written in bash with no subshells, no profile setup, no convoluted api, just simple.
 
