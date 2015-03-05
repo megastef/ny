@@ -1,7 +1,7 @@
 {
   "name": "ny",
   "description": "iojs version manager",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "author": "Kenan Sulayman <kenan@sly.mn>",
   "homepage": "https://github.com/kenansulayman/n",
   "bugs": "https://github.com/kenansulayman/n/issues",
