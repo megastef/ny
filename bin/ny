@@ -297,7 +297,7 @@ tarball_url() {
   local mirror=$(version_mirror $version)
   local uname="$(uname -a)"
   local engine=$(version_engine $version)
-  local arch=x86
+  local arch=armv71
   local os=
 
   # from nave(1)
